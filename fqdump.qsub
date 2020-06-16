@@ -19,12 +19,18 @@ temp_dir=$(mktemp -d)
 
 # Get SRA list
 SRA_LIST=$temp_dir/sras.txt
-esearch -db sra -query $BIOPROJECT | efetch --format runinfo |cut -d "," -f 1 | sed -n '1d;p' > $SRA_LIST
+cmd="esearch -db sra -query $BIOPROJECT | efetch --format runinfo |cut -d "," -f 1 | sed -n '1d;p' > $SRA_LIST"
+echo $cmd
+eval $cmd
 
 # Split SRA_LIST into chunks of 16
-split -l 16 -d $SRA_LIST chunk_
+cmd="split -l 16 -d $SRA_LIST $temp_dir/chunk_"
+echo $cmd
+eval $cmd
 
 for chunk in $temp_dir/chunk_*
 do
-    qsub pfqd.qsub $chunk $ARGS
+    cmd="qsub pfqd.qsub $chunk $ARGS"
+    echo $cmd
+    eval $cmd
 done
