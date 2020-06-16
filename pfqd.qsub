@@ -3,9 +3,8 @@
 
 #$ -P talbot-lab-data
 #$ -j y
-#$ -o logs/pfqd_logs
+#$ -o $HOME/logs/pfqd_logs
 #$ -pe omp 16
-mkdir -p logs/pfqd_logs
 
 SRA_LIST_PATH=$1
 ARGS=${@:2}
