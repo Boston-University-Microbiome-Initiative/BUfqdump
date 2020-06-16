@@ -5,7 +5,6 @@
 
 
 #$ -P talbot-lab-data
-#$ -o $HOME/logs/fqdump_logs
 #$ -j y
 
 # Import arguments
