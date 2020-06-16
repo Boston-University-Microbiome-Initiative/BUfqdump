@@ -16,7 +16,6 @@ module load enterez-direct
 
 # Make temp directory
 temp_dir=$(mktemp -d)
-cd $temp_dir
 
 # Get SRA list
 SRA_LIST=$temp_dir/sras.txt
