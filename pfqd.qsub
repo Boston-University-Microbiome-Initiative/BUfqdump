@@ -6,6 +6,6 @@
 #$ -pe omp 16
 
 SRA_LIST_PATH=$1
-ARGS=$2
+ARGS=${@:2}
 
 parallel-fastq-dump -s $(cat $SRA_LIST_PATH) -t $(nproc --all) $ARGS

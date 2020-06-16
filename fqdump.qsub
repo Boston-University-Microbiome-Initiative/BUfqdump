@@ -9,26 +9,26 @@
 
 # Import arguments
 BIOPROJECT=$1
-ARGS=$2
+ARGS=${@:2}
 
 # Load modules
 module load entrez-direct
 
 # Make temp directory
-temp_dir=$(mktemp -d)
+chunks=$PWD/chunks
 
 # Get SRA list
-SRA_LIST=$temp_dir/sras.txt
+SRA_LIST=$chunks/sras.txt
 cmd="esearch -db sra -query $BIOPROJECT | efetch --format runinfo |cut -d "," -f 1 | sed -n '1d;p' > $SRA_LIST"
 echo $cmd
 eval $cmd
 
 # Split SRA_LIST into chunks of 16
-cmd="split -l 16 -d $SRA_LIST $temp_dir/chunk_"
+cmd="split -l 16 -d $SRA_LIST $chunks/chunk_"
 echo $cmd
 eval $cmd
 
-for chunk in $temp_dir/chunk_*
+for chunk in $chunks/chunk_*
 do
     cmd="qsub pfqd.qsub $chunk $ARGS"
     echo $cmd
