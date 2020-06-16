@@ -12,7 +12,7 @@ BIOPROJECT=$1
 ARGS=$2
 
 # Load modules
-module load enterez-direct
+module load entrez-direct
 
 # Make temp directory
 temp_dir=$(mktemp -d)
