@@ -5,17 +5,22 @@
 
 
 #$ -P talbot-lab-data
+#$ -o logs/fqdump_logs
 #$ -j y
+mkdir -p logs/fqdump_logs
 
 # Import arguments
 BIOPROJECT=$1
 ARGS=${@:2}
+
+
 
 # Load modules
 module load entrez-direct
 
 # Make temp directory
 chunks=$PWD/chunks
+mkdir -p $chunks
 
 # Get SRA list
 SRA_LIST=$chunks/sras.txt

@@ -3,9 +3,12 @@
 
 #$ -P talbot-lab-data
 #$ -j y
+#$ -o logs/pfqd_logs
 #$ -pe omp 16
+mkdir -p logs/pfqd_logs
 
 SRA_LIST_PATH=$1
 ARGS=${@:2}
 
+prefetch $SRA_LIST_PATH
 parallel-fastq-dump -s $(cat $SRA_LIST_PATH) -t $(nproc --all) $ARGS
