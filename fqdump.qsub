@@ -1,0 +1,31 @@
+#!/bin/bash -l
+# USAGE: qsub fqdump.qsub <NCBI BIOPROJECT ID>
+# REQUIRES parallel-fastq-dump
+# conda install -c bioconda parallel-fastq-dump
+
+
+#$ -P talbot-lab-data
+#$ -j y
+
+# Import arguments
+BIOPROJECT=$1
+ARGS=$2
+
+# Load modules
+module load enterez-direct
+
+# Make temp directory
+temp_dir=$(mktemp -d)
+cd $temp_dir
+
+# Get SRA list
+SRA_LIST=$temp_dir/sras.txt
+esearch -db sra -query $BIOPROJECT | efetch --format runinfo |cut -d "," -f 1 | sed -n '1d;p' > $SRA_LIST
+
+# Split SRA_LIST into chunks of 16
+split -l 16 -d $SRA_LIST chunk_
+
+for chunk in $temp_dir/chunk_*
+do
+    qsub pfqd.qsub $chunk $ARGS
+done
