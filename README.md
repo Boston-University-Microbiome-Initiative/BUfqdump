@@ -3,7 +3,8 @@
 Given a NCBI Bioproject ID
 1. Gather SRA IDs
 2. Prefetch all SRAs
-3. Chunks 
+3. Chunks SRAs into groups and submits to parallel-fastq-dump, which chunks *each file* and fastq-dumps each of those in parallel
+
 
 ## Requires
 - parallel-fastq-dump: `conda install -c bioconda parallel-fastq-dump`
