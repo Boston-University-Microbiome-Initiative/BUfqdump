@@ -1,37 +1,49 @@
 #!/bin/bash -l
-# USAGE: qsub fqdump.qsub <NCBI BIOPROJECT ID>
-# REQUIRES parallel-fastq-dump
-# conda install -c bioconda parallel-fastq-dump
-
+# USAGE: qsub fqdump.qsub <PATH TO LIST OF SRAS> <OUTPUT DIRECTORY> <fasterq-dump arguments>
+# Do not use the -O option for output directory, supply output directory as second argument
 
 #$ -P talbot-lab-data
 #$ -j y
+#$ -pe omp 16
 
-# Import arguments
-BIOPROJECT=$1
-ARGS=${@:2}
+module load sratoolkit
 
-# Load modules
-module load entrez-direct
+#### PARSER ARGUMENTS ####
+# If batch job, use SGE_TASK_ID
+if [ -z $SGE_TASK_ID ]
+then
+    SRA_LIST_PATH=$1
+else
+    suffix=`printf '%02d' $(( SGE_TASK_ID - 1 ))`
+    SRA_LIST_PATH=$1_$suffix
+fi
+OUTDIR=$2/fastqs
+mkdir -p $OUTDIR
+ARGS=${@:3}
 
-# Make temp directory
-chunks=$PWD/chunks
-mkdir -p $chunks
+# Get SRAs
+SRAs=$(cat $SRA_LIST_PATH)
 
-# Get SRA list
-SRA_LIST=$chunks/sras.txt
-cmd="esearch -db sra -query $BIOPROJECT | efetch --format runinfo |cut -d "," -f 1 | sed -n '1d;p' > $SRA_LIST"
+# Prefetch
+cmd="prefetch $SRAs"
 echo $cmd
 eval $cmd
 
-# Split SRA_LIST into chunks of 16
-cmd="split -l 16 -d $SRA_LIST $chunks/chunk_"
+# Fasterq-dump
+dumpdir=$(mktemp -d)
+cmd="fasterq-dump $SRAs -e $(nproc --all) -O $dumpdir $ARGS"
 echo $cmd
 eval $cmd
 
-for chunk in $chunks/chunk_*
-do
-    cmd="qsub pfqd.qsub $chunk $ARGS"
-    echo $cmd
-    eval $cmd
-done
+# Gzip files
+cmd="gzip $dumpdir/*"
+echo $cmd
+eval $cmd
+
+# Move gzipped files to output directory
+cmd="mv $dumpdir/*.gz $OUTDIR"
+echo $cmd
+eval $cmd
+
+# Remove temporary directory
+rm -rf $dumpdir

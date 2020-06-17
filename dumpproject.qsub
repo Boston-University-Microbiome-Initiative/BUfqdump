@@ -1,0 +1,40 @@
+#!/bin/bash -l
+# USAGE: qsub dumpproject.qsub <NCBI BIOPROJECT ID> <OUTPUT DIRECTORY> <FASTERQ-DUMP ARGUMENTS>
+# *** Do not use the -O option for output directory, supply output directory as second argument
+# *** Do not use --gzip, files will be zipped automatically
+
+
+#$ -P talbot-lab-data
+#$ -j y
+
+# Import arguments
+BIOPROJECT=$1
+OUTDIR=$2
+mkdir -p $OUTDIR
+ARGS=${@:3}
+
+# Load modules
+module load entrez-direct
+
+# Make directory for chunks
+chunks=$OUTDIR/chunks
+mkdir -p $chunks
+
+# Get SRA list
+SRA_LIST=$chunks/sras.txt
+cmd="esearch -db sra -query $BIOPROJECT | efetch --format runinfo |cut -d "," -f 1 | sed 's/Run//g' > $SRA_LIST"
+echo $cmd
+eval $cmd
+
+# Split SRA_LIST into chunks
+cmd="split -l 50 -d $SRA_LIST $chunks/chunk_"
+echo $cmd
+eval $cmd
+
+# Get number of chunks for submitting job array
+nchunks=$(ls $chunks/chunk_* | wc -l)
+
+# Submit job array
+cmd="qsub -t 1-$nchunks fqdump.qsub $chunks/chunk $OUTDIR $ARGS"
+echo $cmd
+eval $cmd
