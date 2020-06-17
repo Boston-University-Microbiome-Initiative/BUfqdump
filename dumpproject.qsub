@@ -1,6 +1,7 @@
 #!/bin/bash -l
 # USAGE: qsub dumpproject.qsub <NCBI BIOPROJECT ID> <OUTPUT DIRECTORY> <FASTERQ-DUMP ARGUMENTS>
-# Do not use the -O option for output directory, supply output directory as second argument
+# *** Do not use the -O option for output directory, supply output directory as second argument
+# *** Do not use --gzip, files will be zipped automatically
 
 
 #$ -P talbot-lab-data
@@ -9,13 +10,14 @@
 # Import arguments
 BIOPROJECT=$1
 OUTDIR=$2
+mkdir -p $OUTDIR
 ARGS=${@:3}
 
 # Load modules
 module load entrez-direct
 
 # Make temp directory
-chunks=/tmp/chunks
+chunks=$OUTDIR/chunks
 mkdir -p $chunks
 
 # Get SRA list

@@ -17,7 +17,8 @@ else
     suffix=$((SGE_TASK_ID - 1 ))
     SRA_LIST_PATH=$1_$suffix
 fi
-OUTDIR=$2
+OUTDIR=$2/fastqs
+mkdir -p $OUTDIR
 ARGS=${@:3}
 
 # Get SRAs
