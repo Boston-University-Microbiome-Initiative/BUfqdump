@@ -16,7 +16,7 @@ ARGS=${@:3}
 # Load modules
 module load entrez-direct
 
-# Make temp directory
+# Make directory for chunks
 chunks=$OUTDIR/chunks
 mkdir -p $chunks
 

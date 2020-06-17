@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eca5f7e5-25c6-423f-9ef6-66c14fa592b8" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fqdump.qsub" afterPath="$PROJECT_DIR$/dumpproject.qsub" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pfqd.qsub" afterPath="$PROJECT_DIR$/fqdump.qsub" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dumpproject.qsub" afterPath="$PROJECT_DIR$/dumpproject.qsub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fqdump.qsub" afterPath="$PROJECT_DIR$/fqdump.qsub" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +29,8 @@
       <file leaf-file-name="dumpproject.qsub" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dumpproject.qsub">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="290">
+              <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -40,8 +39,8 @@
       <file leaf-file-name="fqdump.qsub" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fqdump.qsub">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="209">
+              <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -50,9 +49,9 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="189">
-                <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state split_layout="SECOND">
+              <first_editor relative-caret-position="135">
+                <caret line="5" column="133" lean-forward="false" selection-start-line="5" selection-start-column="133" selection-end-line="5" selection-end-column="133" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -210,7 +209,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592332351876</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fasterq-dump;job array">
+      <created>1592400250247</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1592400250248</updated>
+    </task>
+    <task id="LOCAL-00010" summary="can't use /tmp when nesting">
+      <created>1592401103436</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592401103436</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -255,7 +268,9 @@
     <MESSAGE value="logs at home" />
     <MESSAGE value="default outlog behavior" />
     <MESSAGE value="update README" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README" />
+    <MESSAGE value="fasterq-dump;job array" />
+    <MESSAGE value="can't use /tmp when nesting" />
+    <option name="LAST_COMMIT_MESSAGE" value="can't use /tmp when nesting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -291,9 +306,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="189">
-            <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="135">
+            <caret line="5" column="133" lean-forward="false" selection-start-line="5" selection-start-column="133" selection-end-line="5" selection-end-column="133" />
             <folding />
           </first_editor>
           <second_editor />
@@ -302,16 +317,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dumpproject.qsub">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="290">
+          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fqdump.qsub">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state relative-caret-position="209">
+          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
           <folding />
         </state>
       </provider>

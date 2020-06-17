@@ -14,7 +14,7 @@ if [ -z $SGE_TASK_ID ]
 then
     SRA_LIST_PATH=$1
 else
-    suffix=$((SGE_TASK_ID - 1 ))
+    suffix=`printf '%02d' $(( SGE_TASK_ID - 1 ))`
     SRA_LIST_PATH=$1_$suffix
 fi
 OUTDIR=$2/fastqs
