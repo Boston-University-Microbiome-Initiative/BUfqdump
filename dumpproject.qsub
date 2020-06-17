@@ -42,7 +42,9 @@ eval $cmd
 # Get number of chunks for submitting job array
 nchunks=$(ls $chunks/chunk_* | wc -l)
 
-# Submit job array
-cmd="qsub -t 1-$nchunks fqdump.qsub $chunks/chunk $OUTDIR $ARGS"
+## Submit job array
+# Download fqdump script
+wget https://raw.githubusercontent.com/michaelsilverstein/BUfqdump/master/fqdump.qsub -P /tmp
+cmd="qsub -t 1-$nchunks /tmp/fqdump.qsub $chunks/chunk $OUTDIR $ARGS"
 echo $cmd
 eval $cmd
