@@ -6,6 +6,14 @@
 #$ -j y
 #$ -pe omp 16
 
+if [ -z $* ] || [ $1 == "--help" ] || [ $1 == "-h" ]
+then
+    usage="# USAGE: qsub fqdump.qsub <PATH TO LIST OF SRAS> <OUTPUT DIRECTORY> <fasterq-dump arguments>\n
+           # Do not use the -O option for output directory, supply output directory as second argument"
+    echo -e $usage
+    exit
+fi
+
 module load sratoolkit
 
 #### PARSER ARGUMENTS ####
