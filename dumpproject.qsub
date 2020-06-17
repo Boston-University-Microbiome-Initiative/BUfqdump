@@ -22,7 +22,7 @@ mkdir -p $chunks
 
 # Get SRA list
 SRA_LIST=$chunks/sras.txt
-cmd="esearch -db sra -query $BIOPROJECT | efetch --format runinfo |cut -d "," -f 1 | sed -n '1d;p' > $SRA_LIST"
+cmd="esearch -db sra -query $BIOPROJECT | efetch --format runinfo |cut -d "," -f 1 | sed 's/Run//g' > $SRA_LIST"
 echo $cmd
 eval $cmd
 
