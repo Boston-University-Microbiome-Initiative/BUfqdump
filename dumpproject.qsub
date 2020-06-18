@@ -51,6 +51,6 @@ nchunks=$(ls $chunks/chunk_* | wc -l)
 
 ## Submit job array
 fqdump_home=/projectnb/talbot-lab-data/msilver/BUfqdump/fqdump.qsub
-cmd="qsub -t 1-$nchunks $fqdump_home $chunks/chunk $OUTDIR $ARGS"
+cmd="qsub -N $JOB_NAME.fqdump -t 1-$nchunks $fqdump_home $chunks/chunk $OUTDIR $ARGS"
 echo $cmd
 eval $cmd

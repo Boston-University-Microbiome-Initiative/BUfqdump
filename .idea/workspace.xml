@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eca5f7e5-25c6-423f-9ef6-66c14fa592b8" name="Default" comment="">
+    <list default="true" id="eca5f7e5-25c6-423f-9ef6-66c14fa592b8" name="Default" comment="error if no SRAs">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dumpproject.qsub" afterPath="$PROJECT_DIR$/dumpproject.qsub" />
     </list>
@@ -28,8 +28,8 @@
       <file leaf-file-name="dumpproject.qsub" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dumpproject.qsub">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+            <state relative-caret-position="567">
+              <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -38,8 +38,8 @@
       <file leaf-file-name="fqdump.qsub" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fqdump.qsub">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -73,8 +73,8 @@
       <list>
         <option value="$PROJECT_DIR$/script_pfqd.qsub" />
         <option value="$PROJECT_DIR$/pfqd.qsub" />
-        <option value="$PROJECT_DIR$/fqdump.qsub" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/fqdump.qsub" />
         <option value="$PROJECT_DIR$/dumpproject.qsub" />
       </list>
     </option>
@@ -257,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592487166094</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="error if no SRAs">
+      <created>1592488053743</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1592488053743</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -309,7 +316,8 @@
     <MESSAGE value="no *" />
     <MESSAGE value="env var" />
     <MESSAGE value="usage" />
-    <option name="LAST_COMMIT_MESSAGE" value="usage" />
+    <MESSAGE value="error if no SRAs" />
+    <option name="LAST_COMMIT_MESSAGE" value="error if no SRAs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -370,14 +378,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fqdump.qsub">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SECOND">
@@ -389,10 +389,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fqdump.qsub">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dumpproject.qsub">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+        <state relative-caret-position="567">
+          <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
           <folding />
         </state>
       </provider>
