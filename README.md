@@ -20,6 +20,12 @@ source ~/.bashrc
 # Usage
 ## Tutorial
 `qsub $dumpproject PRJNA485178 $PWD/PRJNA485178 --split-files`
+
+For submitting multiple jobs, it can be convenient to name the qsub job with the bioproject id
+```bash
+bioproject=PRJNA485178
+qsub -N $bioproject $dumpproject $bioproject $PWD/$bioproject --split-files
+```
 ## Documentation
 There are two files in this repo:
 1. [`dumpproject.qsub`](dumpproject.qsub): 

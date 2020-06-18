@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eca5f7e5-25c6-423f-9ef6-66c14fa592b8" name="Default" comment="error if no SRAs">
+    <list default="true" id="eca5f7e5-25c6-423f-9ef6-66c14fa592b8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dumpproject.qsub" afterPath="$PROJECT_DIR$/dumpproject.qsub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +25,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="dumpproject.qsub" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dumpproject.qsub" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dumpproject.qsub">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="567">
@@ -45,12 +45,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor relative-caret-position="378">
-                <caret line="38" column="186" lean-forward="false" selection-start-line="38" selection-start-column="186" selection-end-line="38" selection-end-column="186" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="702">
+                <caret line="26" column="61" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -73,9 +73,9 @@
       <list>
         <option value="$PROJECT_DIR$/script_pfqd.qsub" />
         <option value="$PROJECT_DIR$/pfqd.qsub" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/fqdump.qsub" />
         <option value="$PROJECT_DIR$/dumpproject.qsub" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -264,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592488053743</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="name fqdump jobs with dumpproject jobname">
+      <created>1592489007281</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1592489007281</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -317,7 +324,8 @@
     <MESSAGE value="env var" />
     <MESSAGE value="usage" />
     <MESSAGE value="error if no SRAs" />
-    <option name="LAST_COMMIT_MESSAGE" value="error if no SRAs" />
+    <MESSAGE value="name fqdump jobs with dumpproject jobname" />
+    <option name="LAST_COMMIT_MESSAGE" value="name fqdump jobs with dumpproject jobname" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -378,17 +386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="378">
-            <caret line="38" column="186" lean-forward="false" selection-start-line="38" selection-start-column="186" selection-end-line="38" selection-end-column="186" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fqdump.qsub">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -402,6 +399,17 @@
         <state relative-caret-position="567">
           <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="702">
+            <caret line="26" column="61" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
