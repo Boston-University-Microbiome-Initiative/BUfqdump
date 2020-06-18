@@ -9,8 +9,8 @@
 if [ -z $* ] || [ $1 == "--help" ] || [ $1 == "-h" ]
 then
     usage="USAGE: qsub dumpproject.qsub <NCBI BIOPROJECT ID> <OUTPUT DIRECTORY> <FASTERQ-DUMP ARGUMENTS>\n
-    *** Do not use the -O option for output directory, supply output directory as second argument\n
-    *** Do not use --gzip, files will be zipped automatically\n"
+    - Do not use the -O option for output directory, supply output directory as second argument\n
+    - Do not use --gzip, files will be zipped automatically\n"
     echo -e $usage
     exit
 fi
