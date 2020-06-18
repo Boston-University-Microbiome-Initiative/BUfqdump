@@ -9,7 +9,15 @@ Highly recommend [executing this command](https://www.biostars.org/p/159950/#160
 
 `echo '/repository/user/main/public/root = "/tmp"' >> $HOME/.ncbi/user-settings.mkfg`
 
+# Set up
+Add an environment variable to your path pointing at the code. Only do this once!
+
+```bash
+export dumpproject=/projectnb2/talbot-lab-data/msilver/BUfqdump/dumpproject.qsub
+source ~/.bashrc
+```
+
 # Tutorial
 
-`qsub dumpproject.qsub PRJNA485178 $PWD/PRJNA485178 --split-files`
+`qsub $dumpproject PRJNA485178 $PWD/PRJNA485178 --split-files`
 
