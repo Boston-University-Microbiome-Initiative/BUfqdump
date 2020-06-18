@@ -34,6 +34,13 @@ cmd="esearch -db sra -query $BIOPROJECT | efetch --format runinfo |cut -d "," -f
 echo $cmd
 eval $cmd
 
+# Raise error and exit if no SRAs found
+if [ $(wc -l $SRA_LIST | cut -d ' ' -f 1) == 0 ]
+then
+    echo "Error: SRA retrieval failed for $BIOPROJECT"
+    exit 1
+fi
+
 # Split SRA_LIST into chunks
 cmd="split -l 50 -d $SRA_LIST $chunks/chunk_"
 echo $cmd
