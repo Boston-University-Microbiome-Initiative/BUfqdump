@@ -13,7 +13,7 @@ Highly recommend [executing this command](https://www.biostars.org/p/159950/#160
 Add an environment variable to your path pointing at the code. Only do this once!
 
 ```bash
-export dumpproject=/projectnb2/talbot-lab-data/msilver/BUfqdump/dumpproject.qsub
+echo "export dumpproject=/projectnb2/talbot-lab-data/msilver/BUfqdump/dumpproject.qsub" >> ~/.bashrc
 source ~/.bashrc
 ```
 
