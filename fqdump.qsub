@@ -2,7 +2,7 @@
 # USAGE: qsub fqdump.qsub <PATH TO LIST OF SRAS> <OUTPUT DIRECTORY> <fasterq-dump arguments>
 # Do not use the -O option for output directory, supply output directory as second argument
 
-#$ -P talbot-lab-data
+#$ -P microbiome
 #$ -j y
 #$ -pe omp 16
 

@@ -3,7 +3,7 @@
 # *** Do not use the -O option for output directory, supply output directory as second argument
 # *** Do not use --gzip, files will be zipped automatically
 
-#$ -P talbot-lab-data
+#$ -P microbiome
 #$ -j y
 
 if [ -z $* ] || [ $1 == "--help" ] || [ $1 == "-h" ]
