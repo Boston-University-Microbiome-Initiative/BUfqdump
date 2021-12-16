@@ -5,7 +5,7 @@ Given a NCBI Bioproject ID
 2. Prefetch all SRAs
 3. Chunks SRAs into groups and submits to the multithreaded [fasterq-dump](https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump)
 
-Highly recommend [executing this command](https://www.biostars.org/p/159950/#160125) which will have NCBI download files to /tmp instead of your home directory
+Highly recommend [executing this command](https://www.biostars.org/p/159950/#160125) which will have NCBI download temporary files to `/scratch` instead of your home directory
 
 ```bash
 echo '/repository/user/main/public/root = "/scratch"' >> $HOME/.ncbi/user-settings.mkfg
@@ -32,7 +32,7 @@ qsub -N $bioproject $dumpproject $bioproject $PWD/$bioproject --split-files
 There are two files in this repo:
 1. [`dumpproject.qsub`](dumpproject.qsub): 
     1. Retrieves the SRA IDs from a given Bioproject
-    2. Breaks the list of those IDs into chunks of 50
+    2. Breaks the list of those IDs into chunks of 30
     3. Submits each chunk to `fqdump.qsub`
 2. [`fqdump.qsub`](fqdump.qsub): Downloads and gzips fastq files for given SRA IDs.
 
