@@ -7,7 +7,9 @@ Given a NCBI Bioproject ID
 
 Highly recommend [executing this command](https://www.biostars.org/p/159950/#160125) which will have NCBI download files to /tmp instead of your home directory
 
-`echo '/repository/user/main/public/root = "/tmp"' >> $HOME/.ncbi/user-settings.mkfg`
+```bash
+echo '/repository/user/main/public/root = "/scratch"' >> $HOME/.ncbi/user-settings.mkfg
+```
 
 # Set up
 Add an environment variable to your path pointing at the code. Only do this once!
